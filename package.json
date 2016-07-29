@@ -1,0 +1,22 @@
+{
+  "name": "learning_react",
+  "version": "1.0.0",
+  "description": "Just derping with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dezart/learning_react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dezart/learning_react/issues"
+  },
+  "homepage": "https://github.com/Dezart/learning_react#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
+}
