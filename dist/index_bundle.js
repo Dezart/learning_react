@@ -51,15 +51,30 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var react = __webpack_require__(2);
-	var reactDom = __webpack_require__(34);
+	'use strict';
 
+	var React = __webpack_require__(2);
+	var ReactDOM = __webpack_require__(34);
+	var Kek = __webpack_require__(173);
 
+	var HelloWorld = React.createClass({
+		displayName: 'HelloWorld',
 
-	var test = (a) => {
-		console.log(a);
-	}
-	test('dick');
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'div',
+					null,
+					'HelloWorld !'
+				),
+				React.createElement(Kek, null)
+			);
+		}
+	});
+
+	ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -21092,6 +21107,47 @@
 	var ReactMount = __webpack_require__(165);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+
+	var List = React.createClass({
+		displayName: 'List',
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				'Component is working',
+				React.createElement('br', null),
+				React.createElement(
+					'span',
+					null,
+					'So hardcore!'
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'span',
+					null,
+					'Why not reloading11'
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'span',
+					null,
+					'why the fuck1  '
+				)
+			);
+		}
+
+	});
+
+	module.exports = List;
 
 /***/ }
 /******/ ]);
