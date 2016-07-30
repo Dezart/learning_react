@@ -54,27 +54,65 @@
 	'use strict';
 
 	var React = __webpack_require__(2);
+	var PropTypes = React.PropTypes;
 	var ReactDOM = __webpack_require__(34);
 	var Kek = __webpack_require__(173);
+	var Link = __webpack_require__(174);
+	var Button = __webpack_require__(175);
+	// var Styles = require('./styles.js');
+
 
 	var HelloWorld = React.createClass({
 		displayName: 'HelloWorld',
 
+		propTypes: {
+			name: PropTypes.string.isRequired
+		},
+		getInitialState: function getInitialState() {
+			return {
+				display: true
+			};
+		},
+
+		toggleDisplay: function toggleDisplay() {
+			this.setState({
+				display: !this.state.display
+			});
+			console.log(this.state);
+		},
+		handleNameChange: function handleNameChange(e) {
+			this.setState({
+				name: e.target.value
+			});
+			console.log(this.state);
+		},
+		handleInput: function handleInput(e) {
+			this.setState({
+				text: this.refs.name.value
+			});
+			console.log(this.state);
+		},
+		dumpState: function dumpState() {
+			console.log(this);
+		},
 		render: function render() {
 			return React.createElement(
 				'div',
 				null,
+				'Hello ',
+				this.state.text,
 				React.createElement(
-					'div',
-					null,
-					'HelloWorld !'
+					Link,
+					{ href: '/' },
+					'Link with onclick attribute'
 				),
-				React.createElement(Kek, null)
+				React.createElement('input', { onChange: this.handleNameChange, name: 'name', type: 'text' }),
+				React.createElement(Button, { style: { color: 'red' }, onClick: this.dumpState })
 			);
 		}
 	});
 
-	ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('app'));
+	ReactDOM.render(React.createElement(HelloWorld, { name: 'Dezarty' }), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -21124,30 +21162,67 @@
 				'div',
 				null,
 				'Component is working',
-				React.createElement('br', null),
-				React.createElement(
-					'span',
-					null,
-					'So hardcore!'
-				),
-				React.createElement('br', null),
-				React.createElement(
-					'span',
-					null,
-					'Why not reloading11'
-				),
-				React.createElement('br', null),
-				React.createElement(
-					'span',
-					null,
-					'why the fuck1  '
-				)
+				React.createElement('br', null)
 			);
 		}
 
 	});
 
 	module.exports = List;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+
+	var Link = React.createClass({
+		displayName: 'Link',
+
+		changeUrl: function changeUrl() {
+
+			window.location.replace(this.props.href);
+		},
+		render: function render() {
+			return React.createElement(
+				'div',
+				{
+					onClick: this.changeUrl },
+				this.props.children
+			);
+		}
+	});
+	module.exports = Link;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+
+	var ButtonStyles = {
+		color: "white",
+		border: "1px solid grey",
+		background: "green"
+	};
+
+	var Button = React.createClass({
+		displayName: "Button",
+
+		render: function render() {
+			return React.createElement(
+				"button",
+				{ style: ButtonStyles, onClick: this.props.handleClick },
+				"Handle Click here!"
+			);
+		}
+	});
+
+	module.exports = Button;
 
 /***/ }
 /******/ ]);
