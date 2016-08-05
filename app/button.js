@@ -4,7 +4,7 @@ var ButtonStyles = {
 	color:"white",
 	border:"1px solid grey",
 	background: "green"
-}
+};
 
 var Button = React.createClass({
 	render:function(){

@@ -56,11 +56,9 @@
 	var React = __webpack_require__(2);
 	var PropTypes = React.PropTypes;
 	var ReactDOM = __webpack_require__(34);
-	var Kek = __webpack_require__(173);
-	var Link = __webpack_require__(174);
-	var Button = __webpack_require__(175);
-	// var Styles = require('./styles.js');
-
+	// var Kek = require('./kek.js');
+	var Link = __webpack_require__(173);
+	var Button = __webpack_require__(174);
 
 	var HelloWorld = React.createClass({
 		displayName: 'HelloWorld',
@@ -21154,30 +21152,6 @@
 
 	var React = __webpack_require__(2);
 
-	var List = React.createClass({
-		displayName: 'List',
-
-		render: function render() {
-			return React.createElement(
-				'div',
-				null,
-				'Component is working',
-				React.createElement('br', null)
-			);
-		}
-
-	});
-
-	module.exports = List;
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(2);
-
 	var Link = React.createClass({
 		displayName: 'Link',
 
@@ -21197,7 +21171,7 @@
 	module.exports = Link;
 
 /***/ },
-/* 175 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

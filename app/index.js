@@ -1,25 +1,24 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactDOM = require('react-dom');
-var Kek = require('./kek.js');
+// var Kek = require('./kek.js');
 var Link = require('./link.js');
 var Button = require('./button.js');
-// var Styles = require('./styles.js');
 
 
 
-var HelloWorld = React.createClass({	
-	propTypes: {
+var HelloWorld = React.createClass({
+	propTypes : {
 	    name: PropTypes.string.isRequired
 	},
 	getInitialState:function() {
 	    return {
-	        display:true  
+	        display:true
 	    };
 	},
-	
+
 	toggleDisplay:function(){
-		this.setState({
+		this.setState({ 
 			display: !this.state.display
 		});
 		console.log(this.state);
